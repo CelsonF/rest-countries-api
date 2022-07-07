@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+
+:root {
+	--background-color-primary:hsl(0, 0%, 100%);
+	--background-color-secondary:hsl(0, 0%, 98%);
+	--text-primary-color:hsl(200, 15%, 8%);
+	--text-secondary-color:hsl(0, 0%, 52%);
+}
+
+:root.dark-theme {
+	--background-color-primary:hsl(207, 26%, 17%);
+	--background-color-secondary:hsl(209, 23%, 22%);
+	--text-primary-color:hsl(0, 0%, 100%);
+	--text-secondary-color:hsl(0, 0%, 52%);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family:'Nunito Sans',sans-serif;
+	background-color: var(--background-color-secondary);
+}
+
+
+.d-flex {
+	display: flex;
+}
+
+.justify-content-between {
+	justify-content: space-between;
+}
+
+.justify-content-center {
+	justify-content: center;;
+}
+
+.pt-2 {
+	padding-top: 2rem;
+}
+
+.px-1 {
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+/*Extra Small device*/
+@media only screen and (max-width:600px) {
+	.title-header {
+		font-size: 0.8rem;
+	}
+}
+/*Small device*/
+@media only screen and (min-width:600px) {
+
+}
+/*Medium device*/
+@media only screen and (min-width:768px) {
+	.title-header {
+		font-size: 1.5rem;
+	}
+}
+/*Large device*/
+@media only screen and (min-width:992px) {
+
+}
+/*Extra Large device*/
+@media only screen and (min-width:1200px) { }
