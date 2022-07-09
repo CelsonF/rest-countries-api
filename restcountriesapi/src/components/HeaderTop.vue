@@ -19,7 +19,7 @@ export default Vue.extend({
 .navbar {
   background-color: var(--background-color-primary);
   box-shadow:1px -4px 10px var(--text-secondary-color);
-  padding: 2rem 1rem;
+  padding: 1.5rem 1rem;
 }
 
 .title-header {

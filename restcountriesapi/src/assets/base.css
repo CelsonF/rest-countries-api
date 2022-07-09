@@ -1,18 +1,6 @@
+@import url('./themes');
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
 
-:root {
-	--background-color-primary:hsl(0, 0%, 100%);
-	--background-color-secondary:hsl(0, 0%, 98%);
-	--text-primary-color:hsl(200, 15%, 8%);
-	--text-secondary-color:hsl(0, 0%, 52%);
-}
-
-:root.dark-theme {
-	--background-color-primary:hsl(207, 26%, 17%);
-	--background-color-secondary:hsl(209, 23%, 22%);
-	--text-primary-color:hsl(0, 0%, 100%);
-	--text-secondary-color:hsl(0, 0%, 52%);
-}
 
 * {
 	margin: 0;
@@ -25,9 +13,16 @@ body {
 	background-color: var(--background-color-secondary);
 }
 
+.w-full {
+	width: 100%;
+}
 
 .d-flex {
 	display: flex;
+}
+
+.d-grid {
+	display: grid;
 }
 
 .justify-content-between {
@@ -36,6 +31,10 @@ body {
 
 .justify-content-center {
 	justify-content: center;;
+}
+
+.justify-content-end {
+justify-content: flex-end;
 }
 
 .pt-2 {
@@ -47,20 +46,67 @@ body {
 	padding-right: 1rem;
 }
 
+.px-2 {
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+}
+
+.px-3 {
+	padding-left: 2rem;
+	padding-right: 2rem;
+}
+
+
+.flex-direction {
+	flex-direction: column;
+}
+
+
+
+.search-row {
+	padding-top: 2rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+
 /*Extra Small device*/
 @media only screen and (max-width:600px) {
 	.title-header {
 		font-size: 0.8rem;
 	}
+
+	.select-regions {
+		margin-top: 1rem;
+	}
+
 }
 /*Small device*/
 @media only screen and (min-width:600px) {
+.input-search {
+	justify-content: center;
+	max-width: 22.5rem;;
+}
+
+.flex-direction {
+	flex-direction: row;
+}
 
 }
 /*Medium device*/
 @media only screen and (min-width:768px) {
 	.title-header {
 		font-size: 1.5rem;
+	}
+
+	.search-row {
+		padding-top: 3rem;
+		padding-left: 5rem;
+		padding-right: 5rem;
+	}
+
+	.navbar {
+		padding: 1.5rem 5rem;
 	}
 }
 /*Large device*/
