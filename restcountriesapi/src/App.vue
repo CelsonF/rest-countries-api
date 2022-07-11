@@ -2,7 +2,7 @@
   <div id="app">
     <HeaderTop class="d-flex" />
     <InputSearch/>
-    <CardCountries @getFlags="loadFlags" />
+    <CardCountries @getFlags="loadFlags" :itemsCard="allFlagsObj" />
   </div>
 </template>
 
@@ -32,27 +32,7 @@ export default Vue.extend({
       const request = new Request(searchAllFlags);
 
       const response = await fetch(request);
-      const allData = await response.json();
-
-      const result = allData.map(
-        (
-          flags:
-            {
-              name: { common: string; },
-              capital: Array<string>,
-              region: string,
-              population: string
-            },
-
-        ) => [
-          flags.name.common,
-          flags.capital,
-          flags.region,
-          flags.population,
-        ],
-      );
-
-      console.log(result);
+      this.allFlagsObj = await response.json();
     },
   },
 });

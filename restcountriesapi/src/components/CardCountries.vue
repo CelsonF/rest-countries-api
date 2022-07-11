@@ -1,85 +1,22 @@
 <template>
   <div class="d-grid grid-cards">
-    <div class="card">
-      <img src="https://flagcdn.com/pe.svg" alt=""  width="100%">
-      <h3> Name </h3>
+    <div class="card" v-for="item in itemsCard" :key="item.id">
+      <img :src="item.flags.png" :alt="item.name.common"  width="60%">
+      <h3> Name : {{item.name.common}} </h3>
       <div>
         <p>
           <b>
-            Population:
+            Population: {{item.population}}
           </b>
         </p>
         <p>
           <b>
-            Region:
+            Region: {{item.region}}
           </b>
         </p>
         <p>
           <b>
-            Capital:
-          </b>
-        </p>
-      </div>
-    </div>
-    <div class="card">
-      <img src="https://flagcdn.com/pe.svg" alt=""  width="100%">
-      <h3> Name </h3>
-      <div>
-        <p>
-          <b>
-            Population:
-          </b>
-        </p>
-        <p>
-          <b>
-            Region:
-          </b>
-        </p>
-        <p>
-          <b>
-            Capital:
-          </b>
-        </p>
-      </div>
-    </div>
-    <div class="card">
-      <img src="https://flagcdn.com/pe.svg" alt=""  width="100%">
-      <h3> Name </h3>
-      <div>
-        <p>
-          <b>
-            Population:
-          </b>
-        </p>
-        <p>
-          <b>
-            Region:
-          </b>
-        </p>
-        <p>
-          <b>
-            Capital:
-          </b>
-        </p>
-      </div>
-    </div>
-    <div class="card">
-      <img src="https://flagcdn.com/pe.svg" alt=""  width="100%">
-      <h3> Name </h3>
-      <div>
-        <p>
-          <b>
-            Population:
-          </b>
-        </p>
-        <p>
-          <b>
-            Region:
-          </b>
-        </p>
-        <p>
-          <b>
-            Capital:
+            Capital: {{item.capital}}
           </b>
         </p>
       </div>
@@ -91,6 +28,12 @@ import Vue from 'vue';
 
 export default Vue.extend({
   name: 'card-countries',
+  props: {
+    itemsCard: {
+      type: Array,
+      required: false,
+    },
+  },
   created() {
     this.$emit('getFlags');
   },
