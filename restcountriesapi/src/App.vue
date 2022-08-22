@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <HeaderTop class="d-flex" />
-    <InputSearch/>
+    <InputSearch />
     <CardCountries @getFlags="loadFlags" :itemsCard="allFlagsObj" />
   </div>
 </template>
@@ -23,21 +23,25 @@ export default Vue.extend({
   data() {
     return {
       allFlagsObj: [],
+      inputValue: '',
     };
   },
   methods: {
     async loadFlags() {
-      const searchAllFlags = 'https://restcountries.com/v3.1/all';
+      try {
+        const searchAllFlags = 'https://restcountries.com/v3.1/all';
 
-      const request = new Request(searchAllFlags);
+        const request = new Request(searchAllFlags);
 
-      const response = await fetch(request);
-      this.allFlagsObj = await response.json();
+        const response = await fetch(request);
+        this.allFlagsObj = await response.json();
+      } catch (error) {
+        console.log(error);
+      }
     },
   },
 });
 </script>
 
 <style scoped lang="css">
-
 </style>
